@@ -1,0 +1,3 @@
+C:/Users/ty/Downloads/github/PathTracer/build/CMakeFiles/RayTracer.dir
+C:/Users/ty/Downloads/github/PathTracer/build/CMakeFiles/edit_cache.dir
+C:/Users/ty/Downloads/github/PathTracer/build/CMakeFiles/rebuild_cache.dir
