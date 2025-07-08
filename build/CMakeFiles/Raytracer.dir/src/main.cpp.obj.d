@@ -172,6 +172,26 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/istream \
  C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/filesystem \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_fwd.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ratio \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_path.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/iomanip \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/sstream \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/msys64/ucrt64/include/c++/14.2.0/codecvt \
+ C:/msys64/ucrt64/include/c++/14.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_dir.h \
+ C:/msys64/ucrt64/include/c++/14.2.0/bits/fs_ops.h \
  C:/Users/ty/Downloads/github/PathTracer/libs/stb_image_write.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
  C:/msys64/ucrt64/include/stdarg.h \
