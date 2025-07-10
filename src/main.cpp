@@ -28,8 +28,8 @@ int main ()
     constexpr int comp = 4;
     uint8_t img[nx * ny * comp];
 
-    //index for the images
-    int k = 0;
+    //index for the image
+    int pixel = 0;
 
     for (int j = ny - 1;  j >= 0; j--)
     {
@@ -38,16 +38,18 @@ int main ()
             float r = float(i) / float(nx);
             float g = float(j) / float(ny);
             float b = 0.0f;
-            img[k * comp] = int(255.99*r);                    // red channel
-            img[k * comp + 1] = int(255.99*g);                // green channel
-            img[k * comp + 2] = int(255.99*b);                // blue channel
-            img[k * comp + 3] = 255;                          // alpha channel
-            k++;
+            img[pixel * comp] = int(255.99*r);                    // red channel
+            img[pixel * comp + 1] = int(255.99*g);                // green channel
+            img[pixel * comp + 2] = int(255.99*b);                // blue channel
+            img[pixel * comp + 3] = 255;                          // alpha channel
+            pixel++;
         }
     }
 
+    //actually generate image
     if (!stbi_write_png("output/A.png", nx, ny, comp, img, nx * comp)) {
         std::cerr << "Unable to create A.png" << '\n';
+        return -1;
     }
     return 0;
 }
