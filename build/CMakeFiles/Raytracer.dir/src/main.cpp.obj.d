@@ -214,4 +214,5 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_hermite.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
  C:/msys64/ucrt64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
- C:/msys64/ucrt64/include/assert.h
+ C:/msys64/ucrt64/include/assert.h \
+ C:\Users\ty\Downloads\github\PathTracer\src\vec3.h

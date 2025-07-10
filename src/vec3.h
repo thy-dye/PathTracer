@@ -13,6 +13,9 @@ class vec3 {
         inline double x() const { return e[0]; }
         inline double y() const { return e[1]; }
         inline double z() const { return e[2]; }
+        inline double r() const { return e[0]; }
+        inline double g() const { return e[1]; }
+        inline double b() const { return e[2]; }
         
         //unary operator overloading
         inline const vec3& operator+() const { return *this; }
@@ -61,7 +64,11 @@ class vec3 {
 };
 
 using point3 = vec3; //essentially a glorified typedef but for the whole class
+using color3 = vec3;
 
+inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
+    return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
+}
 //Vector Utility Functions
 
 inline vec3 operator+(const vec3& v1, const vec3& v2) {

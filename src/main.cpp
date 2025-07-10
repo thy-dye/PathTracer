@@ -10,6 +10,7 @@
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include "vec3.h"
 
 int main ()
 {
@@ -29,20 +30,18 @@ int main ()
     uint8_t img[nx * ny * comp];
 
     //index for the image
-    int pixel = 0;
+    int pixel_index = 0;
 
     for (int j = ny - 1;  j >= 0; j--)
     {
         for (int i = 0; i < nx; i++) 
         {
-            float r = float(i) / float(nx);
-            float g = float(j) / float(ny);
-            float b = 0.0f;
-            img[pixel * comp] = int(255.99*r);                    // red channel
-            img[pixel * comp + 1] = int(255.99*g);                // green channel
-            img[pixel * comp + 2] = int(255.99*b);                // blue channel
-            img[pixel * comp + 3] = 255;                          // alpha channel
-            pixel++;
+            color3 pixel_color = color3(double(i) / double(nx), double(j) / double(ny), 0.0);
+            img[pixel_index * comp] = int(255.99 * pixel_color.r());                    // red channel
+            img[pixel_index * comp + 1] = int(255.99 * pixel_color.g());                // green channel
+            img[pixel_index * comp + 2] = int(255.99 * pixel_color.b());                // blue channel
+            img[pixel_index * comp + 3] = 255;                                          // alpha channel
+            pixel_index++;
         }
     }
 
