@@ -11,6 +11,22 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 #include "vec3.h"
+#include "ray.h"
+
+
+
+void write_color(unsigned char* img, const int &comp, const int &pixel_index, const color3 &pixel_color) {
+            img[pixel_index * comp] = int(255.99 * pixel_color.r());                    // red channel
+            img[pixel_index * comp + 1] = int(255.99 * pixel_color.g());                // green channel
+            img[pixel_index * comp + 2] = int(255.99 * pixel_color.b());                // blue channel
+            img[pixel_index * comp + 3] = 255;                                          // alpha channel
+    }
+
+color3 ray_color(const ray& r){
+    vec3 unit_direction = unit_vector(r.direction());
+    auto a = 0.5*(unit_direction.y() + 1.0);
+    return (1.0-a)*color3(1.0, 1.0, 1.0) + a*color3(0.5, 0.7, 1.0); //lerp
+}
 
 int main ()
 {
@@ -24,29 +40,59 @@ int main ()
     }
 
     //dimensions of the image
-    constexpr int nx = 300;
-    constexpr int ny = 150;
+    constexpr double aspect_ratio = 16.0 / 9.0;
+    constexpr int image_w = 720;
+    constexpr int image_h = (int(image_w / aspect_ratio) < 1) ? 1 : int(image_w / aspect_ratio);
     constexpr int comp = 4;
-    uint8_t img[nx * ny * comp];
+    uint8_t img[image_w * image_h * comp];
 
     //index for the image
     int pixel_index = 0;
 
-    for (int j = ny - 1;  j >= 0; j--)
+    //camera & viewport
+    double focal_length = 1.0;
+    double viewport_h = 2.0;
+    double viewport_w = viewport_h * (double(image_w)/image_h);
+    point3 camera_center = point3(0, 0, 0);
+
+    // Vectors that span the entire viewport
+    vec3 viewport_u = vec3(viewport_w, 0, 0);
+    vec3 viewport_v = vec3(0, -viewport_h, 0);
+
+    //delta for each pixel that scales to the image
+    vec3 pixel_delta_u = viewport_u / image_w;
+    vec3 pixel_delta_v = viewport_v / image_h;
+
+    //vector 
+    vec3 viewport_upper_left = camera_center - vec3(0, 0, focal_length) - viewport_u/2 - viewport_v/2;
+    vec3 pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);
+
+    std::cout << "Image Dimensions: " << image_w << " " << image_h << "\n";
+
+
+    //rendering section
+    for (int j = image_h - 1;  j >= 0; j--)
     {
-        for (int i = 0; i < nx; i++) 
+        std::clog << "Scanlines remaining: " << (image_h - j) << " \n" << std::flush;
+
+        for (int i = 0; i < image_w; i++) 
         {
-            color3 pixel_color = color3(double(i) / double(nx), double(j) / double(ny), 0.0);
-            img[pixel_index * comp] = int(255.99 * pixel_color.r());                    // red channel
-            img[pixel_index * comp + 1] = int(255.99 * pixel_color.g());                // green channel
-            img[pixel_index * comp + 2] = int(255.99 * pixel_color.b());                // blue channel
-            img[pixel_index * comp + 3] = 255;                                          // alpha channel
+            point3 pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);
+            vec3 ray_direction = pixel_center - camera_center;
+
+            ray r = ray(camera_center, ray_direction);
+
+            color3 pixel_color = ray_color(r);
+            
+            write_color(img, comp, pixel_index, pixel_color);
             pixel_index++;
         }
     }
+    
+    std::clog << "\rDone.                 \n";
 
     //actually generate image
-    if (!stbi_write_png("output/A.png", nx, ny, comp, img, nx * comp)) {
+    if (!stbi_write_png("output/A.png", image_w, image_h, comp, img, image_w * comp)) {
         std::cerr << "Unable to create A.png" << '\n';
         return -1;
     }

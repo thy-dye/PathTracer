@@ -225,6 +225,7 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/ray.h \
   C:/Users/ty/Downloads/github/PathTracer/src/vec3.h
 
 
@@ -675,5 +676,7 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h:
+
+C:/Users/ty/Downloads/github/PathTracer/src/ray.h:
 
 C:/Users/ty/Downloads/github/PathTracer/src/vec3.h:
