@@ -4,23 +4,16 @@
 * Goal: make a raytracer to learn some basics to graphics programming
 */
 
-#include <iostream>
 #include <filesystem>
 #include <system_error>
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
-#include "vec3.h"
-#include "ray.h"
+#include "rtweekend.h"
+#include "hittable.h"
+#include "hittable_list.h"
+#include "sphere.h"
 
-
-
-void write_color(unsigned char* img, const int &comp, const int &pixel_index, const color3 &pixel_color) {
-            img[pixel_index * comp] = int(255.99 * pixel_color.r());                    // red channel
-            img[pixel_index * comp + 1] = int(255.99 * pixel_color.g());                // green channel
-            img[pixel_index * comp + 2] = int(255.99 * pixel_color.b());                // blue channel
-            img[pixel_index * comp + 3] = 255;                                          // alpha channel
-    }
 
 double hit_sphere(const point3 &center, double radius, const ray &r) {
     vec3 oc = center - r.origin();

@@ -1,9 +1,6 @@
 #ifndef VEC3H
 #define VEC3H
 
-#include <math.h>
-#include <iostream>
-
 class vec3 {
     public:
         double e[3];
@@ -64,7 +61,6 @@ class vec3 {
 };
 
 using point3 = vec3; //essentially a glorified typedef but for the whole class
-using color3 = vec3;
 
 inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
