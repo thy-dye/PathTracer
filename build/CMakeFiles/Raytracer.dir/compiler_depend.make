@@ -12,6 +12,7 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/_timeval.h \
   C:/msys64/ucrt64/include/assert.h \
   C:/msys64/ucrt64/include/c++/14.2.0/array \
+  C:/msys64/ucrt64/include/c++/14.2.0/backward/auto_ptr.h \
   C:/msys64/ucrt64/include/c++/14.2.0/backward/binders.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bit \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/algorithmfwd.h \
@@ -19,6 +20,9 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/bits/alloc_traits.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/allocated_ptr.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_base.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_wait.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/basic_ios.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/basic_ios.tcc \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/basic_string.h \
@@ -62,6 +66,7 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/bits/new_allocator.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/out_ptr.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/postypes.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/predefined_ops.h \
@@ -71,16 +76,20 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_algobase.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_base.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_cmp.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_uninitialized.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_util.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/refwrap.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr_base.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/specfun.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/std_mutex.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algobase.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_bvector.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_construct.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_function.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h \
@@ -88,8 +97,10 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator_base_types.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_uninitialized.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_vector.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/streambuf.tcc \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/string_view.tcc \
@@ -101,6 +112,7 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/bits/uses_allocator.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/uses_allocator_args.h \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/utility.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/bits/vector.tcc \
   C:/msys64/ucrt64/include/c++/14.2.0/bits/version.h \
   C:/msys64/ucrt64/include/c++/14.2.0/cctype \
   C:/msys64/ucrt64/include/c++/14.2.0/cerrno \
@@ -138,10 +150,13 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/limits \
   C:/msys64/ucrt64/include/c++/14.2.0/locale \
   C:/msys64/ucrt64/include/c++/14.2.0/math.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/memory \
   C:/msys64/ucrt64/include/c++/14.2.0/new \
   C:/msys64/ucrt64/include/c++/14.2.0/numbers \
   C:/msys64/ucrt64/include/c++/14.2.0/optional \
   C:/msys64/ucrt64/include/c++/14.2.0/ostream \
+  C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h \
+  C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_memory_defs.h \
   C:/msys64/ucrt64/include/c++/14.2.0/pstl/pstl_config.h \
   C:/msys64/ucrt64/include/c++/14.2.0/ratio \
   C:/msys64/ucrt64/include/c++/14.2.0/span \
@@ -168,6 +183,7 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/include/c++/14.2.0/type_traits \
   C:/msys64/ucrt64/include/c++/14.2.0/typeinfo \
   C:/msys64/ucrt64/include/c++/14.2.0/variant \
+  C:/msys64/ucrt64/include/c++/14.2.0/vector \
   C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
   C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -225,13 +241,20 @@ CMakeFiles/RayTracer.dir/src/main.cpp.obj: C:/Users/ty/Downloads/github/PathTrac
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/camera.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/color3.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/hittable.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/hittable_list.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/interval.h \
   C:/Users/ty/Downloads/github/PathTracer/src/ray.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/rtweekend.h \
+  C:/Users/ty/Downloads/github/PathTracer/src/sphere.h \
   C:/Users/ty/Downloads/github/PathTracer/src/vec3.h
 
 
-C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets.tcc:
-
 C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream_insert.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_facets.tcc:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/allocator.h:
 
@@ -249,6 +272,8 @@ C:/msys64/ucrt64/include/wchar.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/tr1/riemann_zeta.tcc:
 
+C:/msys64/ucrt64/include/c++/14.2.0/memory:
+
 C:/msys64/ucrt64/include/c++/14.2.0/bits/cpp_type_traits.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/functional_hash.h:
@@ -262,8 +287,6 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algobase.h:
 C:/msys64/ucrt64/include/c++/14.2.0/bits/basic_ios.tcc:
 
 C:/msys64/ucrt64/include/_mingw_stdarg.h:
-
-C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/invoke.h:
 
@@ -293,11 +316,15 @@ C:/msys64/ucrt64/include/c++/14.2.0/tr1/bessel_function.tcc:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/char_traits.h:
 
+C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_lockfree_defines.h:
+
 C:/msys64/ucrt64/include/c++/14.2.0/bits/allocated_ptr.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/tr1/hypergeometric.tcc:
 
 C:/msys64/ucrt64/include/c++/14.2.0/array:
+
+C:/msys64/ucrt64/include/c++/14.2.0/backward/auto_ptr.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/ext/atomicity.h:
 
@@ -324,6 +351,14 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/align.h:
 C:/msys64/ucrt64/include/c++/14.2.0/bits/chrono.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/alloc_traits.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_construct.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/nested_exception.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_base.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/atomic_wait.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/ext/alloc_traits.h:
 
@@ -375,8 +410,6 @@ C:/msys64/ucrt64/include/wctype.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/istream.tcc:
 
-C:/msys64/ucrt64/include/c++/14.2.0/bits/predefined_ops.h:
-
 C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_classes.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/locale_conv.h:
@@ -387,11 +420,11 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/memory_resource.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/move.h:
 
-C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_construct.h:
-
-C:/msys64/ucrt64/include/c++/14.2.0/bits/nested_exception.h:
-
 C:/msys64/ucrt64/include/c++/14.2.0/bits/ostream.tcc:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/out_ptr.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/parse_numbers.h:
 
 C:/msys64/ucrt64/include/math.h:
 
@@ -400,6 +433,8 @@ C:/msys64/ucrt64/include/c++/14.2.0/limits:
 C:/msys64/ucrt64/include/c++/14.2.0/bits/string_view.tcc:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/postypes.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/predefined_ops.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/ptr_traits.h:
 
@@ -423,6 +458,10 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_base.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_cmp.h:
 
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/ranges_uninitialized.h:
+
 C:/msys64/ucrt64/include/stdlib.h:
 
 C:/msys64/ucrt64/include/corecrt_wstdlib.h:
@@ -437,6 +476,8 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/requires_hosted.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr.h:
 
+C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr_atomic.h:
+
 C:/msys64/ucrt64/include/c++/14.2.0/bits/shared_ptr_base.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/specfun.h:
@@ -447,7 +488,13 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/sstream.tcc:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/std_abs.h:
 
+C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/std_mutex.h:
+
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_algo.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_bvector.h:
 
 C:/msys64/ucrt64/include/corecrt_stdio_config.h:
 
@@ -457,17 +504,19 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_heap.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator.h:
 
-C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator_base_funcs.h:
-
 C:/msys64/ucrt64/include/c++/14.2.0/ratio:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_iterator_base_types.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_pair.h:
 
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_raw_storage_iter.h:
+
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_tempbuf.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_uninitialized.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/stl_vector.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/streambuf.tcc:
 
@@ -477,13 +526,15 @@ C:/msys64/ucrt64/include/c++/14.2.0/bits/unicode-data.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/unicode.h:
 
-C:/msys64/ucrt64/include/c++/14.2.0/bits/uniform_int_dist.h:
-
 C:/msys64/ucrt64/include/c++/14.2.0/bits/unique_ptr.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/uses_allocator_args.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/utility.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/bits/vector.tcc:
+
+C:/Users/ty/Downloads/github/PathTracer/src/interval.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/version.h:
 
@@ -502,6 +553,8 @@ C:/msys64/ucrt64/include/c++/14.2.0/cmath:
 C:/msys64/ucrt64/include/c++/14.2.0/span:
 
 C:/msys64/ucrt64/include/c++/14.2.0/codecvt:
+
+C:/msys64/ucrt64/include/c++/14.2.0/vector:
 
 C:/msys64/ucrt64/include/c++/14.2.0/compare:
 
@@ -558,6 +611,10 @@ C:/msys64/ucrt64/include/c++/14.2.0/math.h:
 C:/msys64/ucrt64/include/c++/14.2.0/numbers:
 
 C:/msys64/ucrt64/include/c++/14.2.0/optional:
+
+C:/msys64/ucrt64/include/c++/14.2.0/pstl/execution_defs.h:
+
+C:/msys64/ucrt64/include/c++/14.2.0/pstl/glue_memory_defs.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/pstl/pstl_config.h:
 
@@ -657,6 +714,8 @@ C:/msys64/ucrt64/include/stdarg.h:
 
 C:/msys64/ucrt64/include/stddef.h:
 
+C:/Users/ty/Downloads/github/PathTracer/src/hittable_list.h:
+
 C:/msys64/ucrt64/include/stdint.h:
 
 C:/msys64/ucrt64/include/string.h:
@@ -669,6 +728,8 @@ C:/msys64/ucrt64/include/vadefs.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h:
 
+C:/Users/ty/Downloads/github/PathTracer/src/rtweekend.h:
+
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
@@ -677,6 +738,14 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h:
 
+C:/Users/ty/Downloads/github/PathTracer/src/camera.h:
+
+C:/Users/ty/Downloads/github/PathTracer/src/color3.h:
+
+C:/Users/ty/Downloads/github/PathTracer/src/hittable.h:
+
 C:/Users/ty/Downloads/github/PathTracer/src/ray.h:
+
+C:/Users/ty/Downloads/github/PathTracer/src/sphere.h:
 
 C:/Users/ty/Downloads/github/PathTracer/src/vec3.h:
