@@ -17,7 +17,7 @@ class camera {
 
             for (int j = 0;  j < image_h; j++)
             {
-                std::clog << "Scanlines remaining: " << (image_h - j) << " \n" << std::flush;
+                std::clog << "\rScanlines remaining: " << (image_h - j) << std::flush;
 
                 for (int i = 0; i < image_w; i++) 
                 {
@@ -33,7 +33,7 @@ class camera {
                 }
             }
             
-            std::clog << "\rDone.                 \n";
+            std::clog << "\rDone.                   \n";
 
             return img.data();
         }
