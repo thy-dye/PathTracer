@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/ty/Downloads/github/PathTracer/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/RayTracer.dir/includes_CXX.rsp -g -g -Wall -pedantic-errors -Werror -std=c++23 -o CMakeFiles\\RayTracer.dir\\src\\main.cpp.obj -c C:\\Users\\ty\\Downloads\\github\\PathTracer\\src\\main.cpp",
-  "file": "C:/Users/ty/Downloads/github/PathTracer/src/main.cpp",
-  "output": "CMakeFiles/RayTracer.dir/src/main.cpp.obj"
-}
-]
