@@ -2,6 +2,8 @@
 Making a PathTracer
 Following a guide
 
+Uses the STB library
+
 Things I've learned from this project:
 * Learned how to use CMAKE and what it does
 * Learned general CPP programming and it's inner workings
