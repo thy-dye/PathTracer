@@ -37,8 +37,9 @@ int main ()
     camera cam;
     cam.aspect_ratio = 16.0 / 9.0;
     cam.image_w = 720;
+    cam.samples_per_pixel = 100;
 
-    //Rendering
+    //Rendering the world
     cam.render(world);
 
     //actually generate image

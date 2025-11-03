@@ -5,12 +5,12 @@
 
 class sphere : public hittable {
     public: 
-        sphere(const point3 &center, double radius) : center(center), radius(std::fmax(0,radius)) {}
+        sphere(const point3 &origin, double radius) : origin(origin), radius(std::fmax(0,radius)) {}
 
         //hit detection for sphere
         bool hit(const ray &r, interval ray_t, hit_record &rec) const override {
             //quadratic formula variables a h and c where -2h = b
-            vec3 oc = center - r.origin();
+            vec3 oc = origin - r.origin();
             double a = r.direction().squared_length();
             double h = dot(r.direction(), oc);
             double c = oc.squared_length() - radius*radius;
@@ -35,14 +35,14 @@ class sphere : public hittable {
             //hit record information
             rec.t = root;
             rec.p = r.at(rec.t);
-            vec3 outward_normal = (rec.p - center) / radius;
+            vec3 outward_normal = (rec.p - origin) / radius;
             rec.set_face_normal(r, outward_normal);
 
             return true;
         }
 
     private: 
-        point3 center;
+        point3 origin;
         double radius;
 };
 

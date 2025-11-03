@@ -4,31 +4,28 @@
 #include <vector>
 
 #include "hittable.h"
+#include "ray.h"
 
 class camera {
     public:
-        double aspect_ratio = 1.0;
-        int image_w = 100;
+        double aspect_ratio = 1.0;      //ratio of width over height
+        int image_w = 100;              //image width
+        int samples_per_pixel = 10;     //random samples for each pixel
 
         uint8_t* render(const hittable& world) {
             initialize();
 
             std::cout << "Image Dimensions: " << image_w << " " << image_h << "\n";
 
-            for (int j = 0;  j < image_h; j++)
-            {
+            for (int j = 0;  j < image_h; j++) {
                 std::clog << "\rScanlines remaining: " << (image_h - j) << std::flush;
-
-                for (int i = 0; i < image_w; i++) 
-                {
-                    point3 pixel_center = pixel00_loc + (i * pixel_delta_u) + (j * pixel_delta_v);
-                    vec3 ray_direction = pixel_center - center;
-
-                    ray r = ray(center, ray_direction);
-
-                    color3 pixel_color = ray_color(r, world);
-                    
-                    write_color(img.data(), comp, pixel_index, pixel_color);
+                for (int i = 0; i < image_w; i++) {
+                    color3 pixel_color = color3(0, 0, 0);
+                    for (int sample = 0; sample < samples_per_pixel; sample++) {
+                        ray r = get_ray(i, j);
+                        pixel_color += ray_color(r, world);
+                    }
+                    write_color(img.data(), comp, pixel_index, pixel_samples_scale * pixel_color);
                     pixel_index++;
                 }
             }
@@ -38,32 +35,38 @@ class camera {
             return img.data();
         }
 
-        const uint8_t* get_img() const {
-            return img.data();
+        //gets a ray at a position x y from the 00 pixel from the camera perspective
+        ray get_ray (double u, double v) { 
+            vec3 sample_offset = sample_square();
+            vec3 pixel_sample = pixel00_loc 
+                                + (u + sample_offset.x()) * pixel_delta_u 
+                                + (v + sample_offset.y()) * pixel_delta_v;
+
+            vec3 pixel_direction =  pixel_sample - origin;
+            return ray(origin, pixel_direction); 
         }
 
-        const int& get_width() const {
-            return image_w;
+        vec3 sample_square () const {
+            //return random vector in [-0.5, -0.5] to [0.5, 0.5] square
+            return vec3(random_double() - 0.5, random_double() - 0.5, 0);
         }
 
-        
-        const int& get_height() const {
-            return image_h;
-        }
-
-        const int& get_comp() const {
-            return comp;
-        }
+        //getter methods
+        const uint8_t* get_img() const { return img.data(); }
+        const int& get_width()   const { return image_w; }
+        const int& get_height()  const { return image_h; }
+        const int& get_comp()    const { return comp; }
 
     private:
-        std::vector<uint8_t> img;
-        int pixel_index = 0;
-        const int comp = 4;
-        int image_h;
-        point3 center;
-        point3 pixel00_loc;
-        vec3 pixel_delta_u;
-        vec3 pixel_delta_v;
+        int image_h;                    //image height
+        std::vector<uint8_t> img;       // actual image
+        int pixel_index = 0;            //index for the current pixel
+        const int comp = 4;             //number of components in the image
+        double pixel_samples_scale;     //color scale factor
+        point3 origin;                  //camera origin
+        point3 pixel00_loc;             //location of pixel 0, 0
+        vec3 pixel_delta_u;             //offset to right 
+        vec3 pixel_delta_v;             //offset to the left
 
         void initialize() {
             //calculate height
@@ -71,8 +74,9 @@ class camera {
 
             //allocate the image memory
             img.resize(image_w * image_h * comp);
-            
-            center = point3(0, 0, 0);
+
+            pixel_samples_scale = 1.0 / samples_per_pixel;
+            origin = point3(0, 0, 0);
 
             //camera & viewport
             double focal_length = 1.0;
@@ -88,7 +92,7 @@ class camera {
             pixel_delta_v = viewport_v / image_h;
 
             //vector of pixel 00's center
-            vec3 viewport_upper_left = center - vec3(0, 0, focal_length) - viewport_u/2 - viewport_v/2;
+            vec3 viewport_upper_left = origin - vec3(0, 0, focal_length) - viewport_u/2 - viewport_v/2;
             pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);
 
         }

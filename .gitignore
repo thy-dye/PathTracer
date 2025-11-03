@@ -1,3 +1,4 @@
-.vscode
+.vscode/
 RayTracer.exe
-build
+build/
+output/
