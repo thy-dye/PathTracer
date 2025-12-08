@@ -18,4 +18,7 @@ Things I've learned from this project:
     * blowing my leg off
 * Learned VScode's jsons files
 * Learned to think differently about computers and visualizations
+    * for smooth things like calculus we can use computers to solve them by just doing more samples (like costco)
 * Abstraction of classes
+* how anti-aliasing works at a basic level
+* diffuse materials

@@ -8,9 +8,10 @@
 
 class camera {
     public:
-        double aspect_ratio = 1.0;      //ratio of width over height
-        int image_w = 100;              //image width
-        int samples_per_pixel = 10;     //random samples for each pixel
+        double aspect_ratio     = 1.0;    //ratio of width over height
+        int image_w             = 100;    //image width
+        int samples_per_pixel   = 10;     //random samples for each pixel
+        int max_depth           = 10;     //Maximum of ray bounces in the scene
 
         uint8_t* render(const hittable& world) {
             initialize();
@@ -18,12 +19,12 @@ class camera {
             std::cout << "Image Dimensions: " << image_w << " " << image_h << "\n";
 
             for (int j = 0;  j < image_h; j++) {
-                std::clog << "\rScanlines remaining: " << (image_h - j) << std::flush;
+                std::clog << "\r\033Scanlines remaining: " << (image_h - j) << std::flush;
                 for (int i = 0; i < image_w; i++) {
                     color3 pixel_color = color3(0, 0, 0);
                     for (int sample = 0; sample < samples_per_pixel; sample++) {
                         ray r = get_ray(i, j);
-                        pixel_color += ray_color(r, world);
+                        pixel_color += ray_color(r, max_depth, world);
                     }
                     write_color(img.data(), comp, pixel_index, pixel_samples_scale * pixel_color);
                     pixel_index++;
@@ -97,12 +98,17 @@ class camera {
 
         }
 
-        color3 ray_color(const ray& r, const hittable& world) {
-            hit_record rec;
+        color3 ray_color(const ray& r, int depth, const hittable& world) {
+            if (depth <= 0) {
+                return color3(0,0,0);
+            }
 
+            hit_record rec;
+            
             //check if any hittable was hit
-            if (world.hit(r, interval(0, infinity), rec)) {
-                return 0.5 * (rec.normal + color3(1, 1, 1));
+            if (world.hit(r, interval(0.001, infinity), rec)) {
+                vec3 direction = random_on_hemisphere(rec.normal);
+                return 0.5 * ray_color(ray(rec.p, direction), depth-1, world);
             }
 
             //background is a vertical lerp from blue to white
