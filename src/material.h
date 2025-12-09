@@ -2,6 +2,8 @@
 #define MATERIAL_H
 
 #include "hittable.h"
+#include "color3.h"
+#include "ray.h"
 
 class material {
     public:
@@ -26,7 +28,7 @@ class lambertian : public material{
             }
             scattered = ray(rec.p, scatter_direction);
             attenuation = albedo;
-            true;
+            return true;
         }
     private:
         color3 albedo;
@@ -34,17 +36,51 @@ class lambertian : public material{
 
 class metal : public material {
     public:
-        metal(const color3& albedo) : albedo{albedo} {}
+        metal(const color3& albedo, double fuzz) : albedo{albedo}, fuzz{fuzz < 1 ? fuzz : 1} {}
 
         bool scatter(const ray& r_in, const hit_record& rec, color3& attenuation, ray& scattered)
         const override {
             vec3 reflected = reflect(r_in.direction(), rec.normal);
+            reflected = unit_vector(reflected) + (fuzz * random_unit_vector());
             scattered = ray(rec.p, reflected);
             attenuation = albedo;
-            return true;
+            return (dot(scattered.direction(), rec.normal) > 0);
         }
     private:
         color3 albedo;
+        double fuzz;
+};
+
+class dielectric : public material {
+    public:
+        dielectric(double refraction_index) :refraction_index{refraction_index} {}
+
+        bool scatter(const ray& r_in, const hit_record& rec, color3& attenuation, ray& scattered) 
+        const override {
+            attenuation = color3(1.0 , 1.0, 1.0);
+            double ri = rec.front_face ? (1.0/refraction_index) : refraction_index;
+            
+            vec3 unit_direction = unit_vector(r_in.direction());
+
+            double cos_theta = std::fmin(dot(-unit_direction, rec.normal),1.0);
+            double sin_theta = std::sqrt(1.0 - cos_theta*cos_theta);
+
+            bool cannot_refract = ri * sin_theta > 1.0;
+            vec3 direction; 
+
+            if (cannot_refract) {
+                direction = reflect(unit_direction, rec.normal);
+            }
+            else {
+                direction = refract(unit_direction, rec.normal, ri);
+            }
+
+            scattered = ray(rec.p, direction);
+            return true;
+        }
+    
+    private:
+        double refraction_index;
 };
 
 #endif

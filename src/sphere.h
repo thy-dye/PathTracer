@@ -5,9 +5,8 @@
 
 class sphere : public hittable {
     public: 
-        sphere(const point3 &origin, double radius) : origin(origin), radius(std::fmax(0,radius)) {
-            // Need to initialize material pointer mat
-        }
+        sphere(const point3 &origin, double radius, shared_ptr<material> mat) 
+        : origin{origin}, radius{std::fmax(0,radius)}, mat{mat} {}
 
         //hit detection for sphere
         bool hit(const ray &r, interval ray_t, hit_record &rec) const override {

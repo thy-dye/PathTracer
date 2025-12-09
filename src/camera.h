@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "hittable.h"
+#include "material.h"
 #include "ray.h"
 
 class camera {
@@ -19,7 +20,7 @@ class camera {
             std::cout << "Image Dimensions: " << image_w << " " << image_h << "\n";
 
             for (int j = 0;  j < image_h; j++) {
-                std::clog << "\r\033Scanlines remaining: " << (image_h - j) << std::flush;
+                std::clog << "\rScanlines remaining: " << (image_h - j) << std::flush;
                 for (int i = 0; i < image_w; i++) {
                     color3 pixel_color = color3(0, 0, 0);
                     for (int sample = 0; sample < samples_per_pixel; sample++) {
@@ -107,8 +108,12 @@ class camera {
             
             //check if any hittable was hit
             if (world.hit(r, interval(0.001, infinity), rec)) { //0.001 is needed to get rid of shadow acne
-                vec3 direction = rec.normal + random_unit_vector();
-                return 0.5 * ray_color(ray(rec.p, direction), depth-1, world);
+                ray scattered;
+                color3 attenuation;
+                if (rec.mat->scatter(r, rec, attenuation, scattered)) {
+                    return attenuation * ray_color(scattered, depth-1, world);
+                }
+                return color3(0, 0, 0);
             }
 
             //background is a vertical lerp from blue to white
