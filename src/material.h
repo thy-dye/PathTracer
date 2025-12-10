@@ -36,7 +36,7 @@ class lambertian : public material{
 
 class metal : public material {
     public:
-        metal(const color3& albedo, double fuzz) : albedo{albedo}, fuzz{fuzz < 1 ? fuzz : 1} {}
+        metal(const color3& albedo, double fuzz) : albedo{albedo}, fuzz{fuzz < 0 ? fuzz : 0} {}
 
         bool scatter(const ray& r_in, const hit_record& rec, color3& attenuation, ray& scattered)
         const override {
