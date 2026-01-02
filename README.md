@@ -22,3 +22,6 @@ Things I've learned from this project:
 * Abstraction of classes
 * how anti-aliasing works at a basic level
 * diffuse materials
+* lighting models
+* reflective materials
+* beer's law 
